@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery - Order Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f4e3;
+            text-align: center;
+            padding: 50px;
+        }
+        .order-btn {
+            padding: 15px 30px;
+            background-color: #ff8c42;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .order-btn:hover {
+            background-color: #e07b39;
+        }
+        .order-form {
+            display: none;
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #ff8c42;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e07b39;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Cake Bakery!</h1>
+    <p>Delicious cakes just a click away.</p>
+    
+    <a href="#" class="order-btn" onclick="toggleForm()">Order Now</a>
+
+    <div class="order-form" id="orderForm">
+        <h2>Order Details</h2>
+        <form id="cakeOrderForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone Number" required>
+            
+            <label for="cakeChoice">Choose Your Cake:</label>
+            <select id="cakeChoice" required>
+                <option value="" disabled selected>Select a cake</option>
+                <option value="chocolate">Cream Cake</option>
+                <option value="vanilla">Choco Cake</option>
+                <option value="red-velvet">Slice Cake</option>
+                <option value="carrot">Fruit Cake</option>
+                <option value="custom">Brown cake</option>
+                <option value="custom">Birthday cake</option>
+                <option value="custom">Cup cake</option>
+            </select>
+            
+            <textarea placeholder="Additional Message or Requests" rows="4"></textarea>
+            
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const form = document.getElementById('orderForm');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
